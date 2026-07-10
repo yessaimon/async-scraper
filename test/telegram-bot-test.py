@@ -1,16 +1,36 @@
-from async_scraper import fetch,close
-from aiogram import Bot,Dispatcher,types
+from async_scraper import fetch, close
+from aiogram import Bot, Dispatcher, types
 import asyncio
-url = 'https://www.accuweather.com/en/gb/london/ec4a-2/weather-forecast/328328'
-graduce = 'span'
-bot = Bot(token='confidential information')
+
+
+url = "https://www.accuweather.com/ru/kg/bosteri/226688/weather-forecast/226688"
+selector = ".temp"
+
+
+bot = Bot(token="TOKEN")
 dp = Dispatcher()
+
+
 @dp.message()
-async def mainp(msg : types.Message):
-	if msg.text.lower() == 'weather' or 'погода':
-		tmp = await fetch(url,graduce)
-		await close()
-		await msg.answer(f'weather: {tmp}')
+async def weather(msg: types.Message):
+
+    if msg.text.lower() == "погода":
+
+        temp = await fetch(
+            url,
+            selector
+        )
+
+        await msg.answer(
+            f"🌡 Температура: {temp}"
+        )
+
+
 async def main():
-	await dp.start_polling(bot)
+
+    try:
+        await dp.start_polling(bot)
+
+    finally:
+        await close()
 asyncio.run(main())
