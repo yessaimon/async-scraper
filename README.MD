@@ -35,3 +35,8 @@ USDT (TRC20):
 
 Thank you very much for your support!
 Спасибо большое! 🙏
+
+
+
+посетите папку 'test',и там базовый шаблон и готовый телеграм бот для теста(нужен апи)
+Go to the `test` folder; there you will find a base template and a ready-to-use Telegram bot for testing (an API key is required).
