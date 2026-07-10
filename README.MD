@@ -1,16 +1,37 @@
-честно,я сделал чисто для себя но он очень полезным оказался
-///
-Honestly, I made it just for myself, but it turned out to be very useful.
-///
-мне лень было учить requests и bs4 поэтому сделал на aiohttp и bs4 комбо
-для того чтобы парсить сайты,и там следить за курсом, смотреть погоду или загаловку сайта,
-(div,span,a,img..)
-///
-I was too lazy to learn requests and BS4, so I created a combo with aiohttp and BS4.
-So I could parse websites and track exchange rates, check the weather, or display website headers.
-(div, span, a, img...)
-///
-ton = UQBdLtxQKeEA248OB8h42yrPBLn17MXOr9l2NlrmfaKsRM0R (gram)
-usdt = TEdqd2b5BSeUbfR22quMbx6Yh8KV8j19UQ (trc20)
-Thank you!
-Спасибо большое!
+async-scraper
+
+Honestly, I originally created this project just for myself, but it turned out to be much more useful than I expected.
+
+I was too lazy to separately learn "requests" and "BeautifulSoup", so I decided to combine asynchronous requests with HTML parsing using "aiohttp" + "BeautifulSoup".
+
+The goal was simple: create a convenient tool for parsing websites, collecting information, and automating small tasks.
+
+With it, you can:
+
+- 🌐 Parse website pages
+- 💱 Track exchange rates
+- 🌦 Check weather information
+- 📰 Get website titles and headers
+- 🔍 Extract HTML elements like:
+  - "div"
+  - "span"
+  - "a"
+  - "img"
+  - and more
+
+The project is built around asynchronous processing, making it faster and more efficient when working with multiple pages.
+
+---
+
+Support the project ❤️
+
+If this project helped you, you can support its development:
+
+TON:
+"UQBdLtxQKeEA248OB8h42yrPBLn17MXOr9l2NlrmfaKsRM0R"
+
+USDT (TRC20):
+"TEdqd2b5BSeUbfR22quMbx6Yh8KV8j19UQ"
+
+Thank you very much for your support!
+Спасибо большое! 🙏
