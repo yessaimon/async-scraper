@@ -1,29 +1,40 @@
-from async_scraper import fetch, close
-from aiogram import Bot, Dispatcher, types
 import asyncio
+from aiogram import Bot, Dispatcher, types
+
+from async_scraper import fetch, close
+
+WEATHER_URL = (
+    "https://www.accuweather.com/"
+    "en/gb/london/ec4a-2/weather-forecast/328328"
+)
+
+SELECTOR = "span"
 
 
-url = "https://www.accuweather.com/ru/kg/bosteri/226688/weather-forecast/226688"
-selector = ".temp"
+bot = Bot(token='TOKEN')
 
-
-bot = Bot(token="TOKEN")
 dp = Dispatcher()
 
 
 @dp.message()
-async def weather(msg: types.Message):
+async def weather(message: types.Message):
 
-    if msg.text.lower() == "погода":
+    if message.text.lower() in ("погода", "weather"):
 
-        temp = await fetch(
-            url,
-            selector
-        )
+        try:
+            temperature = await fetch(
+                WEATHER_URL,
+                SELECTOR
+            )
 
-        await msg.answer(
-            f"🌡 Температура: {temp}"
-        )
+            await message.answer(
+                f"Weather: {temperature}"
+            )
+
+        except Exception:
+            await message.answer(
+                "Failed to get weather data"
+            )
 
 
 async def main():
@@ -33,4 +44,8 @@ async def main():
 
     finally:
         await close()
-asyncio.run(main())
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
