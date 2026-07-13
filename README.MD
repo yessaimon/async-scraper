@@ -1,4 +1,4 @@
-async-scraper
+pip install async-scraper
 
 Honestly, I originally created this project just for myself, but it turned out to be much more useful than I expected.
 
